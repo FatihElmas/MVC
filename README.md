@@ -3,10 +3,9 @@ The basic Model-View-Controller template for your php projects.
 ## Usage
 ### index.php
 ```php
-    require __DIR__ . '/mvc/database.php';
-    require __DIR__ . '/mvc/model.php';
-    require __DIR__ . '/mvc/controller.php';
-    require __DIR__ . '/mvc/route.php';
+    foreach (glob(DIR . '/mvc/*.php') as $mvcFile){
+        require $mvcFile;
+    }
     Route::run('/example', '/example/example@index', 'get|post');
 ```
 ### Controller/example/example.php
